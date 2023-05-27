@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import { fetchedLogin, fetchingLogin, LoginError } from '../../store/reducers/Auth/auth'
 import { Form, Input, Button, message } from "antd"
+import { baseURL } from '../../API/api'
 
 const Login = () => {
     const { users, token, loading } = useSelector(store => store.auth)
@@ -26,7 +27,7 @@ const Login = () => {
         e.preventDefault()
         dispatch(fetchingLogin())
             axios
-            .post("http://todo.paydali.uz/api/login", dataForBackend)
+            .post(`${baseURL}/login`, dataForBackend)
             .then(res => {
               if(res.data.code === 422) {
                 message.error("The selected phone is invalid.")

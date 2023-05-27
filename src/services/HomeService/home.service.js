@@ -8,6 +8,6 @@ export const HomeService = {
                 "Authorization" : "Bearer " + localStorage.getItem("token")
             }
         })
-        return response.data
+        return response.data.payload
     }
 }
