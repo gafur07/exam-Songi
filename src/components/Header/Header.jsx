@@ -2,7 +2,7 @@ import React from 'react'
 
 const Header = () => {
   return (
-    <div>Header</div>
+    <div className='h-[10vh]'>Header</div>
   )
 }
 
